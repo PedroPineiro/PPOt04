@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de números</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Listado de números aleatorios</h1>
+    <div th:if="${cantidadTotal>0}">
+      <table border="1px" th:style="${cantidadTotal < 1} ? 'display:none;'">
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Operación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="numero : ${listaNumeros}">
+            <td
+              th:text="${numero}"
+              th:class="${numero > 50} ? 'mas50' : 'menos50'"
+            ></td>
+            <td>
+              <a th:href="@{/delete/{id}(id=${numero})}">delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      Total números: <span th:text="${cantidadTotal}">0</span><br />
+    </div>
+    <div th:if="${cantidadTotal==0}">
+      <p>No hay todavia numeros para mostrar</p>
+    </div>
+
+    <a th:href="@{/new}">Nuevo número</a><br />
+  </body>
+</html>
