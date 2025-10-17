@@ -6,7 +6,9 @@
     <title>Resultado Primo</title>
 </head>
 <body>
-    <p th:if="${resultadoEsPrimo}">El número <span th:text="${numero}"></span> ES primo.</p>
-    <p th:if="${!resultadoEsPrimo}">El número <span th:text="${numero}"></span> NO es primo.</p>
+    <p th:if="${resultadoEsPrimo}">El número <span th:text="${numero}"></span> ES primo</p>
+    <p th:if="${!resultadoEsPrimo}">El número <span th:text="${numero}"></span> NO es primo</p>
+
+    <div><a th:href="@{/}">Volver</a></div>
 </body>
 </html>

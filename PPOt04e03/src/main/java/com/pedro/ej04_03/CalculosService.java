@@ -1,9 +1,13 @@
 package com.pedro.ej04_03;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalculosService {
+
+    private final ArrayList<Integer> divisores = new ArrayList<>();
     
     public boolean esPrimo(int numero) {
         if (numero <= 1) return false;
@@ -19,13 +23,16 @@ public class CalculosService {
         return Math.hypot(x, y);
     }
 
-    public String calcularDivisores(int x){
-        StringBuilder divisores = new StringBuilder();
+    public ArrayList<Integer> calcularDivisores(int x){
         for (int i = 1; i <= x; i++) {
             if (x % i == 0) {
-                divisores.append(i).append(" ");
+                divisores.add(i);
             }
         }
-        return divisores.toString().trim();
+        return divisores;
+    }
+
+    public void limpiar(){
+        divisores.clear();
     }
 }
