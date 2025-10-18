@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Listado de números aleatorios</title>
+  </head>
+  <body>
+    <h1>Calculos</h1>
+    <a th:href="@{/calculos/primo?numero=-4}"> Calculos - primo -4 </a><br/>
+    <a th:href="@{/calculos/primo}"> Calculos - primo Sin Parámetro </a><br/>
+    <a th:href="@{/calculos/primo?numero=7}"> Calculos - primo 7 </a><br/>
+    <a th:href="@{/calculos/primo?numero=8}"> Calculos - primo 8 </a><br/>
+    <a th:href="@{/calculos/primo}"> Calculos - error (sin numero) </a><br/>
+    <a th:href="@{/calculos/hipotenusa/3/5}"> Calculos - hipotenusa (3, 5) </a><br/>
+    <a th:href="@{/calculos/hipotenusa/-3/5}"> Calculos - hipotenusa (-3, 5) </a><br/>
+    <a th:href="@{/calculos/divisores/20}"> Calculos - divisores 20 </a><br/>
+    <a th:href="@{/calculos/divisores/-20}"> Calculos - divisores -20 </a><br/>
+  </body>
+</html>
